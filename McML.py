@@ -22,8 +22,8 @@ class LanguageModel:
         #Satzzeichen entfernen, da diese sonst als Teil des Wortes gesehen werden. Dafür nutzen wir einen Regex:
         text = re.sub(r"[^\w\s]", "", text)
         words = text.split()  # Wandelt den Text in eine Liste aus Wörtern um
-         if len(words) < 2:
-             raise ValueError("Text enthält nicht genug Wörter zum Trainieren")
+        if len(words) < 2:
+            raise ValueError("Text enthält nicht genug Wörter zum Trainieren")
         #Wortbeziehungen erzeugen:
         for i in range(len(words) - 1):
             current_word = words[i]
