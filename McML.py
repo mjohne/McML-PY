@@ -36,7 +36,7 @@ class LanguageModel:
     def generate(self, start_word = None, length=50):
         if not self.model:
             raise ValueError("Modell wurde noch nicht trainiert.")
-        if start_word == "":
+        if start_word in (None, ""):
             start_word = random.choice(list(self.model.keys()))
         current_word = start_word.lower()
         result= [current_word]
